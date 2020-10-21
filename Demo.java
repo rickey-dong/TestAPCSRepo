@@ -17,6 +17,9 @@ public class Demo
     //five[3] = 1; //testing arrToString
     //five[4] = 7; //testing arrToString
     //System.out.println(arrToString(five)); //should print {2, 4, 3, 1, 7}
+    //testing arrayDeepToString
+    //int[][] twod = {{1, 2, 3}, {5,5,5,5,5}, {8, 2, 3, 1}, {1}}; //testing arrayDeepToString
+    //System.out.println(arrayDeepToString(twod).replace("}, ","},\n ")); //testing arrayDeepToString
   }
   public static void printLoop(int n)
   {
@@ -42,6 +45,24 @@ public class Demo
       {
         stringarr = stringarr + arr[i];
         stringarr = stringarr + ", ";
+      }
+    }
+    stringarr = stringarr + "}";
+    return stringarr;
+  }
+  public static String arrayDeepToString(int[][] arr)
+  {
+    String stringarr = "{";
+    for (int subarray = 0; subarray < arr.length; subarray++)
+    {
+      if (subarray != arr.length - 1)
+      {
+        stringarr = stringarr + arrToString(arr[subarray]);
+        stringarr = stringarr + ", ";
+      }
+      else
+      {
+        stringarr = stringarr + arrToString(arr[subarray]);
       }
     }
     stringarr = stringarr + "}";
