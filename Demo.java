@@ -20,6 +20,11 @@ public class Demo
     //testing arrayDeepToString
     //int[][] twod = {{1, 2, 3}, {5,5,5,5,5}, {8, 2, 3, 1}, {1}}; //testing arrayDeepToString
     //System.out.println(arrayDeepToString(twod).replace("}, ","},\n ")); //testing arrayDeepToString
+    //testing create2DArray
+    //System.out.println(arrayDeepToString(create2DArray(6,2,3)).replace("}, ","},\n ")); //testing create2DArray
+    //System.out.println(arrayDeepToString(create2DArray(6,2,3)).replace("}, ","},\n ")); //testing create2DArray
+    //System.out.println(arrayDeepToString(create2DArray(6,2,3)).replace("}, ","},\n ")); //testing create2DArray
+    //System.out.println(arrayDeepToString(create2DArray(6,2,3)).replace("}, ","},\n ")); //testing create2DArray
   }
   public static void printLoop(int n)
   {
@@ -67,5 +72,17 @@ public class Demo
     }
     stringarr = stringarr + "}";
     return stringarr;
+  }
+  public static int[][] create2DArray(int rows, int cols, int maxValue)
+  {
+    int[][] twod = new int[rows][cols];
+    for (int subarray = 0; subarray < twod.length; subarray++)
+    {
+      for (int element = 0; element < cols; element++)
+      {
+        twod[subarray][element] = (int) Math.round(Math.random() * maxValue);
+      }
+    }
+    return twod;
   }
 }
