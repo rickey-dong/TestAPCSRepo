@@ -25,6 +25,10 @@ public class Demo
     //System.out.println(arrayDeepToString(create2DArray(6,2,3)).replace("}, ","},\n ")); //testing create2DArray
     //System.out.println(arrayDeepToString(create2DArray(6,2,3)).replace("}, ","},\n ")); //testing create2DArray
     //System.out.println(arrayDeepToString(create2DArray(6,2,3)).replace("}, ","},\n ")); //testing create2DArray
+    //testing create2DArrayRandomized
+    //System.out.println(arrayDeepToString(create2DArrayRandomized(4,3,5)).replace("}, ","},\n ")); //testing create2DArrayRandomized
+    //System.out.println(arrayDeepToString(create2DArrayRandomized(4,3,5)).replace("}, ","},\n ")); //testing create2DArrayRandomized
+    //System.out.println(arrayDeepToString(create2DArrayRandomized(4,3,5)).replace("}, ","},\n ")); //testing create2DArrayRandomized
   }
   public static void printLoop(int n)
   {
@@ -84,5 +88,18 @@ public class Demo
       }
     }
     return twod;
+  }
+  public static int[][] create2DArrayRandomized(int rows, int cols, int maxValue)
+  {
+    int[][] ragged = new int[rows][];
+    for (int subarray = 0; subarray < rows; subarray++)
+    {
+      ragged[subarray] = new int[(int) Math.round(Math.random() * cols)];
+      for (int element = 0; element < ragged[subarray].length; element++)
+      {
+        ragged[subarray][element] = (int) Math.round(Math.random() * maxValue);
+      }
+    }
+    return ragged;
   }
 }
